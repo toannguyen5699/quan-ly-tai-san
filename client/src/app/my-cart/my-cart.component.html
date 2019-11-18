@@ -1,0 +1,46 @@
+<h1>Product</h1>
+<div class="form-group">
+  <button (click)="openPopup1()" style="margin-left: 20px;" class="btn btn-info" *ngIf="isAdmin">Create Product</button>
+</div>
+<select class="form-control" name="employeeID" id="employee">
+  <label for="name">Full Name</label>
+  <option *ngFor="let item of orderDetail" [value]="item.id">{{item.name}}</option>
+</select>
+<div class="table-responsive table-container">
+  <table class="table table-dark table-hover table-striped">
+    <thead class="thead-light">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>description</th>
+        <th>image</th>
+        <th>type</th>
+        <th>Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of productAddedTocart">
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.description}}</td>
+        <td>{{product.image}}</td>
+        <td>{{product.type}}</td>
+        <td><input type="number" class="form-control" name="Quantity" placeholder="Enter Quantity"
+            [(ngModel)]="product.quantity"></td>
+
+        <!-- <td>
+                    <button (click)="openPopup2(product)" style="margin-left: 20px;" class="btn btn-info">Update</button> 
+                     <button (click)="updateProduct(product)" style="margin-left: 20px;" class="btn btn-info">
+                        Edit</button>
+                    <button (click)="getProductById(product)" style="margin-left: 20px;"
+                        class="btn btn-info">Info</button> 
+                </td> -->
+
+
+      </tr>
+
+      <button (click)="summit()" style="margin-left: 20px;" class="btn btn-info">Update</button>
+    </tbody>
+  </table>
+</div>
+<div>

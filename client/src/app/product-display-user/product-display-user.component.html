@@ -1,0 +1,31 @@
+<!-- <div id="collapseExample" [ngbCollapse]="false"> -->
+<div class="card">
+  <div class="card-body">
+    <table class="table table-bordered table-responsive" style="display: inline;margin-left: 5px;"
+      *ngFor="let product of products">
+      <tr>
+        <td>
+          <img src="http://localhost:4000/{{product.image}}" width="180px;" height="300px;" />
+        </td>
+      </tr>
+      <tr>
+        <td>Name: {{product.name}}</td>
+      </tr>
+      <tr>
+        <td>Description: {{product.description}}</td>
+      </tr>
+      <tr>
+        <td>Type: {{product.type}}</td>
+      </tr>
+      <tr>
+        <td>Quanlity in Warehouse: {{product.amountInWarehouse}}</td>
+      </tr>
+      <tr>
+        <td>
+          <button type="button" class="btn btn-outline-success" (click)="OnAddCart(product)"><b>Add to
+              cart</b></button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<!-- <div class="container">
+  <div class="row"> -->
+<!-- <div class="col-md-6 mt-5 mx-auto"> -->
+<div class="container">
+  <h1 class="h3 mb-3 font-weight-normal">Update-employee</h1>
+  <select class="form-control" name="employeeID" id="employee" [(ngModel)]="data.employeeIDresponse">
+    <option *ngFor="let item of employees" [value]="item.id">{{item.fullName}}</option>
+  </select>
+  <div class="row">
+    <div class="form-group col-sm-4">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" name="name" placeholder="Enter Name" [(ngModel)]="data.name">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-lg btn-primary btn-block" (click)="registerOrderDetail()">Create Order</button>
+</div>

@@ -1,0 +1,73 @@
+
+<!-- <div class="container">
+  <div class="row"> -->
+<!-- <div class="col-md-6 mt-5 mx-auto"> -->
+  <div class="container">
+    <h1 class="h3 mb-3 font-weight-normal">Update-employee</h1>
+    <!-- <select class="form-control" name="employeeID" id="employee" ngModel>
+            <option *ngFor="let item of employeeList" [value]="item.id">{{item.fullName}}</option>
+          </select> -->
+    <div class="row">
+      <div class="form-group col-sm-4">
+        <label for="name">FullName</label>
+        <input type="text" class="form-control" name="fullName" placeholder="Enter FullName" [(ngModel)]="data.fullName">
+      </div>
+      <div class="form-group col-sm-4">
+        <label for="name">Birth Date</label>
+        <input type="date" class="form-control" name="birthDate" placeholder="Enter Address" [(ngModel)]="data.birthDate">
+      </div>
+      <div class="form-group col-sm-4">
+        <label for="name">Status</label>
+        <select class="form-control" name="status" id="status" [(ngModel)]="data.status">
+          <option *ngFor="let status of statuss" [value]="status.status">{{status.status}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-sm-4">
+        <label for="name">Address</label>
+        <input type="text" class="form-control" name="address" placeholder="Enter Address" [(ngModel)]="data.address">
+      </div>
+      <div class="form-group col-sm-4">
+        <label for="name">Phone</label>
+        <input type="number" class="form-control" name="phone" placeholder="Enter phone" [(ngModel)]="data.phone">
+      </div>
+      <div class="form-group col-sm-4">
+        <label for="name">Gender</label>
+        <select class="form-control" name="gender" id="gender" [(ngModel)]="data.gender">
+          <option *ngFor="let gender of genders" [value]="gender.gender">{{gender.gender}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-sm-6">
+        <label for="name">Email</label>
+        <input type="email" class="form-control" name="email" placeholder="Enter email" [(ngModel)]="data.email">
+      </div>
+      <div class="form-group col-sm-6">
+        <label for="name">Code</label>
+        <input type="text" class="form-control" name="code" placeholder="Enter Code" [(ngModel)]="data.code">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="name">Job Title</label>
+      <input type="text" class="form-control" name="jobTitle" placeholder="Enter Job Title" [(ngModel)]="data.jobTitle">
+    </div>
+    <div class="row">
+      <div class="form-group col-sm-6">
+        <label for="name">Job Start Date</label>
+        <input type="date" class="form-control" name="jobStartDate" placeholder="Enter Job Start Date"
+          [(ngModel)]="data.jobStartDate">
+      </div>
+      <div class="form-group col-sm-6">
+        <label for="name">Job End Date</label>
+        <input type="date" class="form-control" name="jobEndDate" placeholder="Enter Job End Date"
+          [(ngModel)]="data.jobEndDate">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-lg btn-primary btn-block" (click)="registerEmployee()">Register!</button>
+  </div>
+  <!-- </div> -->
+  <!-- </div>
+  </div> -->
+  

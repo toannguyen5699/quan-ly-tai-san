@@ -1,0 +1,33 @@
+﻿<!-- nav -->
+<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+    <div class="navbar-nav">
+        <ul class="nav navbar-nav navbar-right">
+            <li><a class="nav-item nav-link" routerLink="/">Home</a></li>
+            <li><a class="nav-item nav-link" routerLink="/admin" *ngIf="isAdmin">Admin</a></li>
+            <li><a class="nav-item nav-link" routerLink="/register" *ngIf="isAdmin">Register</a></li>
+            <li><a class="nav-item nav-link" routerLink="/register-employee" *ngIf="isAdmin">Register employee</a></li>
+            <li><a class="nav-item nav-link" routerLink="/product" *ngIf="isAdmin">Product</a></li>
+            <li><a class="nav-item nav-link" routerLink='/product-user' *ngIf="isUser">Borrow product</a></li>
+            <li><a class="nav-item nav-link" routerLink='/product-order' *ngIf="isUser">Product order</a></li>
+            <li><a class="nav-item nav-link" routerLink='/notification' *ngIf="isAdmin">Notification</a></li>
+            <li>
+                <a class="nav-item nav-link" routerLink='/myCart' *ngIf="isUser">
+                    <b>Cart </b> <span class="badge badge-light">{{cartItemCount}}</span>
+                    <span class="sr-only">unread messages</span>
+                </a>
+            </li>
+            <li><a class="nav-item nav-link" (click)="logout()">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- main app container -->
+<div class="jumbotron">
+    <!-- <div class="container">
+        <div class="row"> -->
+    <!-- <div class="col-md-6 offset-md-3"> -->
+    <router-outlet></router-outlet>
+    <!-- </div> -->
+    <!-- </div>
+    </div> -->
+</div>

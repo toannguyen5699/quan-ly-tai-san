@@ -1,0 +1,13 @@
+﻿<h1>Home</h1>
+<button class="btn btn-success" (click)="openPopup1()">change your info</button>
+<button class="btn btn-success" (click)="openPopup2()">change avatar</button>
+<p>You're logged in with Angular 7 & JWT!!</p>
+<p>Your role is: <strong>{{currentUser.role}}</strong>.</p>
+<p>This page can be accessed by all authenticated users.</p>
+<div>
+    Current user from secure api end point:
+    <ul>
+        <li *ngIf="employeeFromApi">{{employeeFromApi.fullName}}</li>
+    </ul>
+</div>
+
