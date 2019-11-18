@@ -28,11 +28,11 @@ class ProductOrderModel extends Model {
     })
   }
 
-  updateStatus(data) {
+  updateStatus(id) {
     return new Promise((resolve, reject) => {
       let sql = `UPDATE productOrder
                   SET status = 'ACCEPT'
-                  WHERE id = '${data}'`;
+                  WHERE id = '${id}'`;
       this.sequelize.query(sql, {
         type: this.sequelize.QueryTypes.SELECT
       }).then(result => {

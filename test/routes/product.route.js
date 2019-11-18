@@ -29,8 +29,10 @@ router.post('/borrowProduct',(req, res) => {
 
 router.get('/list-product', getAllProduct);
 router.get('/product-order', getAllProductOrder);
-router.get('/order-detail', getAllOrderOfWait)
+router.get('/order-detail', getAllOrderOfWait);
 router.get('/notification', getNotification);
+router.get('/info-product-order/:id', getAllInfoProductFromOrder);
+
 router.post('/update-status', (req, res) => {
   console.log(req.body);
   productOrderService.updateStatus(req.body.id)
@@ -39,6 +41,13 @@ router.post('/update-status', (req, res) => {
       res.send('error: ' + err)
     });
   })
+
+function getAllInfoProductFromOrder(req, res, next) {
+  const id = parseInt(req.params.id);
+  productInCartService.getAllInfoProductFromOrder(id)
+    .then(products => res.json(products))
+    .catch(err => next(err));
+}
 
 function getAllOrderOfWait(req, res, next) {
   productOrderService.getAllOrderOfWait() 

@@ -59,6 +59,21 @@ class ProductInCartModel extends Model {
       })
     })
   }
+
+  getAllInfoProductFromOrder(id) {
+    return new Promise((resolve, reject) => {
+      let sql = `SELECT productInfo.*,productInCart.productInfoID  FROM productInCart
+                  INNER JOIN productInfo ON productInfo.id = productInCart.productInfoID 
+                  WHERE productInCart.productOrderID = '${id}'`;
+      this.sequelize.query(sql, {
+        type: this.sequelize.QueryTypes.SELECT
+      }).then(result => {
+        resolve(result);
+      }).catch(err => {
+        reject(err);
+      })
+    })
+  }
 }
 
 

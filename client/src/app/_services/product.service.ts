@@ -37,6 +37,11 @@ export class ProductService {
     return this.http.get<ProductOrder[]>(`http://localhost:4000/product/product-order`);
   }
 
+  public getAllInfoProductFromOrder(id: number) {
+    console.log(id);
+    return this.http.get(`http://localhost:4000/product/info-product-order/${id}`);
+  }
+
   addProductToCart(products: any) {
     localStorage.setItem("product", JSON.stringify(products));
   }

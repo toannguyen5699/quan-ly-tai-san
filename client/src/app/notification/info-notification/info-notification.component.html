@@ -1,0 +1,31 @@
+<div class="table-responsive table-container">
+  <table class="table table-dark table-hover table-striped">
+      <thead class="thead-light">
+          <tr>
+              <th>Name</th>
+              <th>description</th>
+              <th>image</th>
+              <th>type</th>
+              <th>Amount In Warehouse</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let productInOrder of productInOrders">
+              <td>{{productInOrder.name}}</td>
+              <td>{{productInOrder.description}}</td>
+              <td>{{productInOrder.image}}</td>
+              <td>{{productInOrder.type}}</td>
+              <td>{{productInOrder.amountInWarehouse}}</td>
+
+              <td>
+                  <!-- <button (click)="openPopup2(product)" style="margin-left: 20px;" class="btn btn-info">Update</button> -->
+                  <!-- <button (click)="updateProduct(product)" style="margin-left: 20px;" class="btn btn-info">
+                      Edit</button>
+                  <button (click)="getProductById(product)" style="margin-left: 20px;"
+                      class="btn btn-info">Info</button> -->
+              </td>
+          </tr>
+      </tbody>
+  </table>
+</div>
+<div>

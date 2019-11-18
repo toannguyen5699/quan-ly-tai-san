@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ProductService } from '@/_services';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { InfoNotificationComponent } from './info-notification/info-notification.component';
 import { AuthenticationService } from '../_services';
 import { ProductInfo } from '@/_models';
 import { User, Role } from '../_models';
@@ -16,7 +18,7 @@ export class NotificationComponent implements OnInit {
   public orderDetails: any = [];
   public data: any = {};
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService, private modal: NgbModal) { }
 
   ngOnInit() {
     this.getAllOrderDetail();
@@ -45,5 +47,17 @@ export class NotificationComponent implements OnInit {
     }
     );
   }
+
+  openPopup1(orderDetail) {
+    const modalRef = this.modal.open(InfoNotificationComponent, { size: 'lg'})
+    modalRef.componentInstance.id = orderDetail.id;
+    modalRef.result.then((result) => {
+        console.log(result);
+    }).catch((error) => {
+        console.log(error);
+    });
+    console.log(modalRef.componentInstance.id)
+    console.log(orderDetail.id);
+}
 
 }

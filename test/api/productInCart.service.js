@@ -38,7 +38,25 @@ async function getNotification() {
   })
 }
 
+async function getAllInfoProductFromOrder(id) {
+  return new Promise((resolve, reject) => {
+    ProductInCartModel.getAllInfoProductFromOrder(id).then(resAllProduct => {
+      return resolve({
+        status: 200,
+        msg: 'success',
+        data: resAllProduct
+      })
+    }, err => {
+      return resolve({
+        status: 500,
+        msg: 'loi'
+      })
+    })
+  })
+}
+
 module.exports = {
   createMulti,
-  getNotification
+  getNotification,
+  getAllInfoProductFromOrder
 }

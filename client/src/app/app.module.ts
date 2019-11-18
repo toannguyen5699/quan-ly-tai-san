@@ -22,6 +22,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FilterPipe } from './admin/filter.pipe';
 import { ListProductComponent } from './list-product/list-product.component';
 import { CreateProductComponent} from './list-product/create-product/create-product.component';
+import { InfoNotificationComponent } from './notification/info-notification/info-notification.component';
 import { ProductDisplayUserComponent } from './product-display-user/product-display-user.component';
 import { MyCartComponent } from './my-cart/my-cart.component';
 import { OrderDetailComponent } from './order-detail/order-detail.component';
@@ -51,6 +52,7 @@ import { NotificationComponent } from './notification/notification.component';
       FilterPipe,
       ListProductComponent,
       CreateProductComponent,
+      InfoNotificationComponent,
       ProductDisplayUserComponent,
       MyCartComponent,
       OrderDetailComponent,
@@ -62,7 +64,8 @@ import { NotificationComponent } from './notification/notification.component';
       InfoEmployeeComponent,
       UpdateEmployeeComponent,
       ChangeAvatarComponent,
-      CreateProductComponent
+      CreateProductComponent,
+      InfoNotificationComponent
    ],
    bootstrap: [
       AppComponent
