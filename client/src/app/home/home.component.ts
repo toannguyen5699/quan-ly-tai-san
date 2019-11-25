@@ -6,10 +6,10 @@ import { NewComponent } from './new/new.component';
 import { ChangeAvatarComponent } from './change-avatar/change-avatar.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
-@Component({ templateUrl: 'home.component.html' })
+@Component({ templateUrl: 'home.component.html', styleUrls: ['./home.component.css'] })
 export class HomeComponent {
     currentUser: User;
-    employeeFromApi: Employee;
+    employeeFromApi: any;
 
     constructor(
         private userService: UserService,
@@ -22,6 +22,7 @@ export class HomeComponent {
 
     ngOnInit() {
         this.employeeService.getEmployeeById(this.currentUser.employeeId).subscribe((res:any) => {
+            res.data.avatar = res.data.avatar.slice(8);
             this.employeeFromApi = res.data;
             console.log(this.employeeFromApi)
         });
